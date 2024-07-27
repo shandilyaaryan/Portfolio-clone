@@ -7,6 +7,7 @@
   text-decoration: none;
   border: none;
   outline: none;
+  scroll-behavior: smooth;
   font-family: "Poppins", "sans-serif";
 }
 html {
@@ -35,10 +36,9 @@ header {
 }
 .logo {
   font-size: 3rem;
-  color: #b74b4b;
+  color: white;
   font-weight: 800;
   cursor: pointer;
-  transition: 0.5s ease;
 }
 .logo:hover {
   transform: scale(1.1);
@@ -48,13 +48,12 @@ nav a {
   color: white;
   margin-left: 4rem;
   font-weight: 500;
-  transition: 0.3 ease;
   border-bottom: 3px solid transparent;
 }
 nav a:hover,
 nav a:active {
-  color: #b74b4b;
-  border-bottom: 3px solid #b74b4b;
+  color: #B692C2;
+  border-bottom: 3px solid #B692C2;
 }
 @media (max-width: 995px) {
   nav {
@@ -63,8 +62,8 @@ nav a:active {
     top: 0;
     right: 0;
     width: 40%;
-    border-left: 3px solid #b74b4b;
-    border-bottom: 3px solid #b74b4b;
+    border-left: 3px solid #B692C2;
+    border-bottom: 3px solid #B692C2;
     border-bottom-left-radius: 2rem;
     padding: 1rem solid;
     background-color: #161616;
@@ -82,7 +81,7 @@ nav a:active {
   nav:active {
     padding: 1rem;
     border-radius: 0.5rem;
-    border-bottom: 0.5rem solid #b74b4b;
+    border-bottom: 0.5rem solid #B692C2;
   }
 }
 
@@ -103,23 +102,24 @@ section {
   line-height: 1.3;
 }
 span {
-  color: #b74b4b;
+  color: #B692C2;
 }
 .home-content h3 {
   font-size: 4rem;
   margin-bottom: 1rem;
   font-weight: 700;
 }
-.home-img {
-  border-radius: 50%;
+.home-content p {
+  font-size: 2rem;
 }
-.home-img img {
-  position: relative;
-  width: 32vw;
-  border-radius: 50%;
-  box-shadow: 0 0 25px solid #b74b4b;
-  cursor: pointer;
+.home-img {
+  background-image: url(meme.jpg);
+  background-size: cover;
+  height: 380px;
+  width: 1200px;
+  box-shadow: 0 0 25px solid #B692C2;
   transition: 0.2s linear;
+  border-radius: 50%;
 }
 .home-img img:hover {
   font-size: 1.8rem;
@@ -132,18 +132,18 @@ span {
   width: 4rem;
   height: 4rem;
   background-color: transparent;
-  border: 0.2rem solid #b74b4b;
+  border: 0.2rem solid #B692C2;
   font-size: 2rem;
   border-radius: 50%;
   margin: 3rem 1.5rem 3rem 0;
   transition: 0.3s ease;
-  color: #b74b4b;
+  color: #B692C2;
 }
 .social-icons a:hover {
   color: black;
   transform: scale(1.3) translateY(0.5px);
-  background-color: #b74b4b;
-  box-shadow: 0 0 25px #b74b4b;
+  background-color: #B692C2;
+  box-shadow: 0 0 25px #B692C2;
 }
 .btn {
   display: inline-block;
@@ -151,18 +151,19 @@ span {
   background-color: black;
   border-radius: 4rem;
   font-size: 1.6rem;
-  color: #b74b4b;
+  color: #B692C2;
   letter-spacing: 0.3rem;
   font-weight: 600;
-  border: 2px solid #b74b4b;
+  border: 2px solid #B692C2;
   transition: 0.3s ease;
   cursor: pointer;
 }
 .btn:hover {
   transform: scale3d(1.03);
-  background-color: #b74b4b;
+  transform: scale(1.3) translateY(0.5px);
+  background-color: #B692C2;
   color: black;
-  box-shadow: 0 0 25px #b74b4b;
+  box-shadow: 0 0 25px #B692C2;
 }
 .typing-text {
   font-size: 34px;
@@ -174,29 +175,22 @@ span {
 }
 .typing-text span::before {
   content: "software developer";
-  color: #b74b4b;
-  overflow: hidden;
-  width: 0%;
+  color: #B692C2;
   animation: words 20s infinite;
 }
 .typing-text span::after {
   content: "";
-  background-color: black;
+  background-color: var(#161616);
   position: absolute;
   width: calc(100% + 8px);
   height: 100%;
-  border-left: 3px solid black;
+  border-left: 3px solid var(#161616);
   right: -8;
-  animation: typing 1s forwards infinite;
+  animation: cursor 0.6s infinite, typing 20s steps(14) infinite;
 }
-@keyframes typing {
-    from{
-        width: 0%;
-        border-left: 3px solid #b74b4b;
-    }
+@keyframes cursor {
     to{
-    border-left: 3px solid #b74b4b;
-    width: 100%;
+      border-left: 3px solid var(#B692C2);
     }
 }
 @keyframes words {
@@ -219,6 +213,22 @@ span {
   81%,
   100% {
     content: "Gamer";
+  }
+}
+@keyframes typing {
+  10%,15%,
+  30%,35%,
+  50%,55%,
+  70%,75%,
+  90%,95% {
+    width: 0;
+  }
+  5%,20%,
+  25%,40%,
+  45%,60%,
+  65%,80%,
+  85%,100% {
+    width: calc(100% + 8px);
   }
 }
 @media (max-width: 1000px) {
